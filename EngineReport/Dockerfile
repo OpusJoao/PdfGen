@@ -21,5 +21,7 @@ WORKDIR /app
 # Copy the published application
 COPY --from=build-env /app/out .
 
+RUN mkdir Temp
+
 # Set the entry point to start the application
 ENTRYPOINT ["dotnet", "EngineReport.dll"]

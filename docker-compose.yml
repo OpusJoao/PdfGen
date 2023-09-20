@@ -5,6 +5,8 @@ services:
       context: ./EngineReport
       dockerfile: ./Dockerfile 
     container_name: engine_report_app
+    volumes:
+      - ./Temp/:/app/Temp
     ports:
       - "8081:80"
   singulare:

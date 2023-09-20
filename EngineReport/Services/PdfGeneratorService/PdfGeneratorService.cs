@@ -11,7 +11,7 @@ namespace EngineReport.Services.PdfGeneratorService
                 ChromePdfRenderer renderer = new ChromePdfRenderer();
                 PdfDocument pdf = renderer.RenderHtmlAsPdf(template);
                 var now = (DateTimeOffset)DateTime.UtcNow;
-                string filename = $".\\Temp\\{IdProcessReport}_{now.ToString("yyyyMMddHHmmssfff")}.pdf";
+                string filename = $"./Temp/{IdProcessReport}_{now.ToString("yyyyMMddHHmmssfff")}.pdf";
                 pdf.SaveAs(filename);
                 return filename;
             }
