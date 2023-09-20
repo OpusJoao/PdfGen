@@ -16,7 +16,7 @@ namespace Singulare.Messaging
         {
             var connectionFactory = new ConnectionFactory
             {
-                HostName = "localhost"
+                HostName = "host.docker.internal"
             };
 
             _connection = connectionFactory.CreateConnection("quote-report-publisher");

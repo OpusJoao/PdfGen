@@ -12,8 +12,8 @@ using Singulare.Data;
 namespace Singulare.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20230919103355_ChangeDateFieldToDateTimeAtQuoteTable")]
-    partial class ChangeDateFieldToDateTimeAtQuoteTable
+    [Migration("20230920154433_createQuoteDb")]
+    partial class createQuoteDb
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

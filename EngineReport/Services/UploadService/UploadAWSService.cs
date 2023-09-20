@@ -22,15 +22,13 @@ namespace EngineReport.Services.UploadService
             var bucketExists = await _s3Client.DoesS3BucketExistAsync(_bucketName);
             if (!bucketExists) return null;
 
-            //upload
-            var file = await _fileService.ReadFile(filePath);
             var request = new PutObjectRequest()
             {
                 BucketName = _bucketName,
-                Key = string.IsNullOrEmpty(prefix) ? file.FileName : $"{prefix?.TrimEnd('/')}/{file.FileName}",
-                InputStream = file.OpenReadStream()
+                Key = string.IsNullOrEmpty(prefix) ? "teste.pdf" : $"{prefix?.TrimEnd('/')}/{"teste.pdf"}",
+                FilePath = filePath
             };
-            request.Metadata.Add("Content-Type", file.ContentType);
+            request.Metadata.Add("Content-Type", "application/pdf");
             await _s3Client.PutObjectAsync(request);
 
             //get

@@ -36,7 +36,7 @@ namespace EngineReport.Messaging
 
             var connectionFactory = new ConnectionFactory
             {
-                HostName = "localhost"
+                HostName = "host.docker.internal"
             };
 
             _connection = connectionFactory.CreateConnection("quote-report-subscriber");
@@ -102,7 +102,7 @@ namespace EngineReport.Messaging
                 throw new Exception("Report was not registered");
             }
 
-            //var link = await UploadReport(filePath);
+            var link = await UploadReport(filePath);
 
             var updatedLink = await processReportService.UpdateProcessReportLink(@event.Id, filePath);
             if (updatedLink is null)

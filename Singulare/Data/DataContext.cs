@@ -12,7 +12,7 @@ namespace Singulare.Data
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
-            optionsBuilder.UseSqlServer("Server=localhost,1433;Database=quote_db;User ID=sa;Password=A&VeryComplex123Password;Trusted_Connection=False; TrustServerCertificate=True;");
+            optionsBuilder.UseSqlServer("Server=host.docker.internal,1433;Database=quote_db;User ID=sa;Password=A&VeryComplex123Password;Trusted_Connection=False; TrustServerCertificate=True;");
         }
 
         public DbSet<Quote> Quotes{ get; set; }

@@ -1,12 +1,11 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
 namespace Singulare.Migrations
 {
     /// <inheritdoc />
-    public partial class ChangeDateFieldToDateTimeAtQuoteTable : Migration
+    public partial class ChangeDateFieldToDateTimeAtQuoteTablev2 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -24,12 +23,12 @@ namespace Singulare.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.AlterColumn<string>(
-                name: "Date",
-                table: "Quotes",
-                type: "nvarchar(max)",
-                nullable: false,
-                oldClrType: typeof(DateTime),
-                oldType: "datetime2");
+               name: "Date",
+               table: "Quotes",
+               type: "nvarchar(max)",
+               nullable: false,
+               oldClrType: typeof(DateTime),
+               oldType: "datetime2");
         }
     }
 }
